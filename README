@@ -1,15 +1,36 @@
-This is a multi-threaded multi-pool FPGA and ASIC miner for bitcoin.
+git clone https://github.com/Zwilla/bmminer-cgminer492
 
-This code is provided entirely free of charge by the programmer in his spare
-time so donations would be greatly appreciated. Please consider donating to the
-address below.
+cd bmminer-cgminer492
 
-Con Kolivas <kernel@kolivas.org>
-15qSxP1SQcUX3o4nhkfdbgyoWEFMomJ4rZ
+chmod -R 777 *
 
-NOTE: This code is licensed under the GPLv3. This means that the source to any
-modifications you make to this code MUST be provided by law if you distribute
-modified binaries. See COPYING for details.
+./autogen.sh
+
+./configure --enable-bitamin-c5
+
+make
+
+now copy the file to your miner
+
+/usr/bin
+
+do this:
+
+mv /usr/bin/bmminer /usr/bin/bmminer-old
+
+cp cgminer /usr/bin/bmminer
+
+chmod 755 /usr/bin/bmminer
+
+/etc/init.d/bmminer.sh restart
+
+screen -r
+
+If you want to use your old bmminer, just run this
+
+mv /usr/bin/bmminer-old /usr/bin/bmminer
+
+/etc/init.d/bmminer.sh restart
 
 
 DOWNLOADS:
